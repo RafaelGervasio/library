@@ -9,34 +9,32 @@
 </head>
 <body>
     <div class="top_section">
-        <h1>Library App</h1>
-        <p>Use the button below to add books!</p>
+        <h1 class="page_title">Library App</h1>
+        <p class="page_title_subtext">Use the button below to add books!</p>
         
         <button class="open_modal">Add book</button>
+    </div>
         
-        <div class="modal_container">
-            <dialog class="modal">
-                <span class="close_modal">&times;</span>
-                <h1>Add a book</h1>
-                <form action="" class="form" method="dialog">
-                    <label for="author">Author:</label>
-                    <input type="text" name="author" id="author" required>
-                    
-                    <label for="title">Title:</label>
-                    <input type="text" name="title" id="title" required>
-    
-                    <label for="pages">Number of pages:</label>
-                    <input type="text" name="pages" id="pages" required>
-    
-                    <label for="read">Have you read this book?</label>
-                    <input type="checkbox" name="read" id="read">
-    
-                    <button type="submit">Add book</button>
-                </form>
-            </dialog>
-        </div>
-        
+    <div class="modal_container">
+        <dialog class="modal">
+            <span class="close_modal">&times;</span>
+            <h1>Add a book</h1>
+            <form action="" class="form" method="dialog">
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" required>
+                
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" required>
 
+                <label for="pages">Number of pages:</label>
+                <input type="text" name="pages" id="pages" required>
+
+                <label for="read">Have you read this book?</label>
+                <input type="checkbox" name="read" id="read">
+
+                <button type="submit">Add book</button>
+            </form>
+        </dialog>
     </div>
     <div class="display_books">
 

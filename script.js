@@ -11,6 +11,10 @@ close_modal.addEventListener ("click", () => {
     modal.close()
 })
 
+function closeModal(){
+    modal.close()
+}
+
 const myLibrary = [] // holds all the books
 
 function Book(title, author, pages, read) {
@@ -25,12 +29,62 @@ function addBookToLibrary(book){
 }
 
 function displayAllBooks(){
-    myLibrary.forEach(display_book)
-}
+    const display_books_section = document.querySelector(".display_books")
+    display_books_section.innerHTML = '';
 
-function display_book(book){
-    console.log(book)
-  }
+    myLibrary.forEach( book => {
+        const book_container = document.createElement('div')
+        book_index_in_library = myLibrary.indexOf(book).toString()
+
+        book_container.classList.add('book_container')
+        book_container.classList.add(book_index_in_library)
+
+
+        const title_paragraph = document.createElement('p')
+        title_paragraph.textContent = `📖 ${book.title}`
+        title_paragraph.classList.add('title_paragraph')
+
+        const author_paragraph = document.createElement('p')
+        author_paragraph.textContent = `by ${book.author}`
+        author_paragraph.classList.add('author_paragraph')
+
+        const pages_paragraph = document.createElement('p')
+        pages_paragraph.textContent = `Number of pages: ${book.pages}`
+        pages_paragraph.classList.add('pages_paragraph')
+
+        const read_button = document.createElement('button')
+        read_button.textContent = `Read: ${book.read}`
+        read_button.classList.add('read_book_button')
+
+        const remove_book_button = document.createElement('button')
+        remove_book_button.textContent = 'Remove book'
+        remove_book_button.classList.add('remove_book_button')
+
+        const buttons_container = document.createElement('div')
+        buttons_container.classList.add('buttons_container')
+        buttons_container.appendChild(read_button)
+        buttons_container.appendChild(remove_book_button)
+
+
+        read_button.addEventListener('click', () => {
+            (book.read === true) ? book.read = false : book.read = true
+            displayAllBooks()
+        })
+
+        remove_book_button.addEventListener('click', () => {
+            book_index_in_library = +(book_container.classList.item(1))
+            myLibrary.splice(book_index_in_library, 1)
+            displayAllBooks()
+        })
+
+        book_container.appendChild(title_paragraph)
+        book_container.appendChild(author_paragraph)
+        book_container.appendChild(pages_paragraph)
+        book_container.appendChild(buttons_container)
+
+        display_books_section.appendChild(book_container)
+    })
+}
 
 form.addEventListener("submit", function(event) {
     event.preventDefault()
@@ -43,22 +97,21 @@ form.addEventListener("submit", function(event) {
     let new_book = new Book(title, author, pages, read)
 
     addBookToLibrary(new_book)
+    closeModal()
+    displayAllBooks()
 })
 
+displayAllBooks()
 
 
 
-//TODO Refactoring the code
 
-//TODO Displaying the books
-// Once a new book is created / removed, call display_books
-//display_books
-    //Iterate trough myLib until all books covered
-    //Create a div in the DOM
-    // fill out the div with info from the book
+// // TODO Refactoring the code
 
-//TODO Remove books
+// // TODO Displaying the books
 
-//TODO Buttont to change 'read' status
+// // TODO Remove books
 
-//TODO Styling the page
+// // TODO Buttont to change 'read' status
+
+// // TODO Styling the page

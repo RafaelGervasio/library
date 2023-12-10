@@ -24,15 +24,51 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 
-    padding-top: 30px;
-    background-color: hsl(200, 6%, 18%);
+    padding-top: 40px;
+    background-color: rgba(0, 0, 0, 0.921);
 }
 
 h1{
     /* color: white; */
     font-size: 3rem;
+}
+
+.page_title, .page_title_subtext{
+  color: hsl(160, 43%, 97%);
+}
+
+.page_title{
+  font-size: 4rem;
+}
+
+.page_title_subtext{
+  font-size: 1.2rem;
+}
+
+.open_modal{
+  display: grid;
+  place-content: center;
+  
+  background-color: #7897CC;
+  color: hsl(162, 45%, 6%);
+  font-size: 1.2rem;
+  
+  border: none;
+  border-radius: 8px;
+  
+  padding: 20px;
+  height: 45px; 
+  width: 160px;
+  
+  margin-bottom: 20px;
+}
+
+.open_modal:hover{
+  background-color: hsl(166, 45%, 52%);
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .close_modal{
@@ -58,4 +94,83 @@ h1{
 
   height: 500px;
   max-height: 100%;
+}
+
+.display_books{
+  padding-top: 30px;
+  display: grid;
+  place-content: center;
+
+  color: hsl(162, 45%, 6%);
+}
+
+.book_container{
+  display: grid;
+  place-content: center;
+  gap: 20px;
+  
+  background-color: hsla(166, 58%, 58%, 0.554);
+  color: hsl(162, 45%, 6%);
+  
+  border: none;
+  border-radius: 8px;
+  
+  padding: 20px;
+
+  margin-bottom: 20px;
+}
+
+.title_paragraph, .author_paragraph, .pages_paragraph{
+  text-align: center;
+}
+
+.title_paragraph{
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.author_paragraph, .pages_paragraph{
+  font-size: 1.1rem;
+}
+
+.buttons_container{
+  display: flex;
+  gap: 20px;
+}
+
+.read_book_button{
+  display: grid;
+  place-content: center;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 8px;
+
+  background-color: #84a6e0;
+}
+
+.remove_book_button{
+  display: grid;
+  place-content: center;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 8px;
+
+  background-color: #ff5338c0;
+}
+
+.read_book_button:hover, .remove_book_button:hover{
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read_book_button:hover{
+  background-color: #728fc2;
+}
+
+.remove_book_button:hover{
+  background-color: #E24930;
 }
