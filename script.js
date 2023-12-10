@@ -3,7 +3,7 @@ const open_modal = document.querySelector('.open_modal')
 const close_modal = document.querySelector(".close_modal")
 const form = document.querySelector(".form")
 
-open_modal.addEventListener("click", () =>{
+open_modal.addEventListener("click", () => {
     modal.showModal()  
 })
 
@@ -37,10 +37,28 @@ form.addEventListener("submit", function(event) {
 
     let title = document.querySelector("#title").value
     let author = document.querySelector("#author").value
-    let number_of_pages = document.querySelector("#number_of_pages").value
-    let read_the_book = document.querySelector("#read_the_book").checked
+    let pages = document.querySelector("#pages").value
+    let read = document.querySelector("#read").checked
 
-    let new_book = new Book(title, author, number_of_pages, read_the_book)
+    let new_book = new Book(title, author, pages, read)
 
     addBookToLibrary(new_book)
 })
+
+
+
+
+//TODO Refactoring the code
+
+//TODO Displaying the books
+// Once a new book is created / removed, call display_books
+//display_books
+    //Iterate trough myLib until all books covered
+    //Create a div in the DOM
+    // fill out the div with info from the book
+
+//TODO Remove books
+
+//TODO Buttont to change 'read' status
+
+//TODO Styling the page
